@@ -1,0 +1,52 @@
+<div class="row">
+    <div class="col-md-3">
+        <div class="list-group statistics">
+            <a class="list-group-item calories">
+                <h3 class="pull-right">
+                    <i class="icon glyphicon glyphicon-fire"></i>
+                </h3>
+                <h4 class="list-group-item-heading count">{{statistics.calories}}</h4>
+                <p class="list-group-item-text">Calories</p>
+            </a>
+            <a class="list-group-item duration">
+                <h3 class="pull-right">
+                    <i class="icon glyphicon glyphicon-time"></i>
+                </h3>
+                <h4 class="list-group-item-heading count">{{statistics.duration}}</h4>
+                <p class="list-group-item-text">Minutes</p>
+            </a>
+            <a class="list-group-item distance">
+                <h3 class="pull-right">
+                    <i class="icon glyphicon glyphicon-road"></i>
+                </h3>
+                <h4 class="list-group-item-heading count">{{statistics.distance}}</h4>
+                <p class="list-group-item-text">Miles</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <canvas id="calories-chart" width="450" height="212"></canvas>
+    </div>
+</div>
+
+<div class="row">
+    <table class="table table-striped table-bordered">
+        <thead>
+        <tr>
+            <th>When</th>
+            <th>Activity</th>
+            <th>Duration(min.)</th>
+            <th>Calories</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="activity in pastActivities">
+            <td>{{activity.workoutDate | fromNow}}</td>
+            <td>{{activity.activityType}}</td>
+            <td>{{activity.duration}}</td>
+            <td>{{activity.calories}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

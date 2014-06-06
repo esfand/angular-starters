@@ -1,0 +1,4 @@
+logs/*
+!.gitkeep
+*.suo
+README.html

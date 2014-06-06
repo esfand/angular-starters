@@ -1,0 +1,82 @@
+<!--<div class="row">
+    <div class="col-lg-offset-4 col-lg-8">
+        <h1>This page requires you to be logged in</h1>
+        <h3>If you are not logged in, you should be redirected to the login view</h3>
+    </div>
+</div>-->
+
+
+<div class='row'>
+    <div class="col-md-3 col-sm-3">
+        <datepicker ng-model="newActivity.workoutDate"></datepicker>
+    </div>
+
+    <div class="col-md-5 col-sm-4">
+        <div class="alert alert-danger" ng-show="message.length > 0">{{message}}</div>
+        <h3>{{newActivity.workoutDate | date: 'MMMM, dd'}}</h3>
+
+        <form name="activity" role="form">
+            <div class="form-group col-md-4">
+                <label for="duration">Duration(min.)</label>
+                <input type="text" class="form-control" id="duration" placeholder="Duration" ng-model='newActivity.duration' required only-digits />
+            </div>
+            <div class="form-group col-md-4">
+                <label for="distance">Distance</label>
+                <input type="text" class="form-control" id="distance" placeholder="Distance" ng-model='newActivity.distance' only-digits />
+            </div>
+            <div class="form-group col-md-4">
+                <label for="calories">Calories</label>
+                <input type="text" class="form-control" id="calories" placeholder="Calories" ng-model='newActivity.calories' only-digits />
+            </div>
+
+        </form>
+    </div>
+
+    <div class='col-md-6'>
+        <ul class='activityTypes'>
+            <li ng-repeat="type in activityTypes" ng-click="newActivity.activityType=type" ng-class="{'active': newActivity.activityType == type}">{{type}}</li>
+        </ul>
+    </div>
+
+    <div class="col-md-5">
+        <button ng-click='save()' ng-disabled="activity.$invalid" class="btn btn-primary btn-lg btn-block">Add</button>
+    </div>
+</div>
+
+
+<!--Orignal
+
+<div class="row">
+    <div class="col-sm-3">
+        <datepicker ng-model="newActivity.workoutDate"></datepicker>
+    </div>
+    <div class="col-sm-4"><h3>Create Activity</h3>
+        <div class="alert alert-danger" ng-show="message.length > 0">{{message}}</div>
+        <h3>{{newActivity.workoutDate | date: 'MMMM, dd'}}</h3>
+        <form name="activity" role="form">
+            <div class="form-group">
+                <label for="duration">Duration</label>
+                <div id="duration" class="input-group duration bootstrap-timepicker">
+                    <input class="form-control input-sm" type="text" timepicker ng-model='newActivity.duration' required />
+                    <span class="input-group-addon glyphicon glyphicon-time"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="calories">Calories Burned</label>
+                <input class="form-control input-sm" type="number" ng-model='newActivity.calories' />
+            </div>
+            <div class="form-group">
+                <label for="calories">Calories Burned</label>
+                <input class="form-control input-sm" type="number" ng-model='newActivity.distance' />
+            </div>
+
+            <ul class='activityTypes'>
+                <li ng-repeat="type in activityTypes" ng-click="newActivity.activityType=type" ng-class="{'active': newActivity.activityType == type}">{{type}}</li>
+            </ul>
+
+            <button ng-click='save()' ng-disabled="activity.$invalid" class="btn btn-primary">Add</button>
+        </form>
+    </div>
+</div>
+
+-->
